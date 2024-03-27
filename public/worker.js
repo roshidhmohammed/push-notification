@@ -8,7 +8,7 @@ this.addEventListener("install", (event) => {
             return cache.addAll([
                 "/offline.html",
                 "/offline.css",
-                "/static/media/Vazirmatn.eb0d9c6914c753f76252.ttf",
+                // "/static/media/Vazirmatn.eb0d9c6914c753f76252.ttf",
                 //if you want cache the first page , add "/"
             ])
         })
