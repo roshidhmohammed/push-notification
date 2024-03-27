@@ -5,7 +5,8 @@ import Notification from "./firebaseNotifications/Notification";
 
 function App() {
   return (
-    <div className="App">
+    <>
+    <div >
        <ToastContainer
           position="top-center"
           autoClose={5000}
@@ -21,6 +22,9 @@ function App() {
           closeButton={false}
       />
         <Notification/>
+       </div>
+    <div className="App">
+       
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -36,6 +40,7 @@ function App() {
         </a>
       </header>
     </div>
+    </>
   );
 }
 
