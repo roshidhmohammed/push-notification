@@ -22,6 +22,7 @@ function App() {
           closeButton={false}
       />
         <Notification/>
+        <h1>Hi React</h1>
        </div>
    
     </>
