@@ -108,3 +108,13 @@ self.addEventListener('message', (event) => {
         self.skipWaiting();
     }
 });
+
+self.addEventListener("push", event => {
+    const options = {
+        body: event.data.text(),
+
+    }
+    event.waitUntil(
+        self.registration.showNotification("frontend", options)
+    )
+})
