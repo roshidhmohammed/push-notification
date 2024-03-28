@@ -5,6 +5,7 @@ import {ToastContainer, toast} from 'react-toastify';
 const Notification = () => {
     const [notification, setNotification] = useState({title: '', body: ''});
     const notify = () => toast(<ToastDisplay/>);
+    console.log(notification)
 
     function ToastDisplay() {
         return (
