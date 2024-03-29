@@ -7,8 +7,10 @@
 
 
 // Scripts for firebase and firebase messaging
-importScripts('https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js')
-importScripts('https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js');
+// importScripts('https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js')
+// importScripts('https://www.gstatic.com/firebasejs/10.10.0/firebase-messaging-compat.js');
+
+import { initializeApp, firebase, messaging } from 'firebase/app';
 let self=this
 
 // Initialize the Firebase app in the service worker by passing the generated config
@@ -26,10 +28,10 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 
 // Retrieve firebase messaging
-const messaging = firebase.messaging(app);
+const messagings = firebase.messaging(app);
 
 // Handle incoming messages while the app is not in focus (i.e in the background, hidden behind other tabs, or completely closed).
-messaging.onBackgroundMessage(function(payload) {
+messagings.onBackgroundMessage(function(payload) {
   console.log('Received background message ', payload);
   // Customize notification here
   const notificationTitle = payload.notification.title;
