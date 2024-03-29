@@ -109,12 +109,12 @@ self.addEventListener('message', (event) => {
     }
 });
 
-self.addEventListener("push", event => {
-    const options = {
-        body: event.data.text(),
+// self.addEventListener("push", event => {
+//     const options = {
+//         body: event.data.text(),
 
-    }
-    event.waitUntil(
-        self.registration.showNotification("frontend", options)
-    )
-})
+//     }
+//     event.waitUntil(
+//         self.registration.showNotification("frontend", options)
+//     )
+// })

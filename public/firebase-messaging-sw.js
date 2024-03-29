@@ -2,13 +2,13 @@
 // See `Access registration token section` @ https://firebase.google.com/docs/cloud-messaging/js/client#retrieve-the-current-registration-token
 
 
-let self = this
+// let self = this
 
 
 
 // Scripts for firebase and firebase messaging
-self.importScripts('https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js')
-self.importScripts('https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js')
+importScripts('https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js');
 
 
 // Initialize the Firebase app in the service worker by passing the generated config
@@ -23,10 +23,10 @@ const firebaseConfig = {
 };
 
 
-self.firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 
 // Retrieve firebase messaging
-const messaging = self.firebase.messaging();
+const messaging = firebase.messaging(app);
 
 // Handle incoming messages while the app is not in focus (i.e in the background, hidden behind other tabs, or completely closed).
 messaging.onBackgroundMessage(function(payload) {
@@ -35,6 +35,7 @@ messaging.onBackgroundMessage(function(payload) {
   const notificationTitle = payload.notification.title;
   const notificationOptions = {
     body: payload.notification.body,
+    icon:payload.notification.image,
   };
 
   self.registration.showNotification(notificationTitle,

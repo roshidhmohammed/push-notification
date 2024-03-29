@@ -15,6 +15,7 @@ import {toast} from 'react-toastify';
 // import InfoIcon from "./assets/svg/InfoIcon"
 
 
+
 const isLocalhost = Boolean(
     window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
